@@ -748,4 +748,23 @@ video.profession-img::-webkit-media-controls-panel {
   border-radius: 8px;
 }
 
+/* Style par défaut (desktop/tablette) */
+.carousel-caption {
+  position: absolute;
+  top: 25%;   /* exemple actuel */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+}
+
+/* Ajustement pour mobile */
+@media (max-width: 768px) {
+  .carousel-caption {
+    top: 60%;   /* pousse plus bas */
+    font-size: 1rem; /* texte un peu plus petit si besoin */
+    padding: 0 10px; /* un peu de marge horizontale */
+  }
+}
+
 
