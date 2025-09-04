@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marcel Ogouliguende — Site vitrine</title>
+  <meta
+    name="description"
+    content="Site vitrine de campagne : biographie, programme, actualités, liens et contacts."
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#0ea05a" />
+
+  <!-- ===== CSS interne pour le carrousel fondu ===== -->
+  <style>
+    .hero-fader { position: relative; }
+    .hero-fader .hero-slide {
+      position: absolute;
+      inset: 0;
+      border-radius: 22px;
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity 800ms ease;
+      pointer-events: none;
+    }
+    .hero-fader .hero-slide.is-active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 2;
+    }
+    .hero-dots {
+      position: absolute;
+      left: 24px;
+      bottom: 22px;
+      display: flex;
+      gap: 8px;
+      z-index: 3;
+    }
+    .hero-dots .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .hero-dots .dot.is-active { background: #fff; transform: scale(1.15); }
+    .hero-dots .dot:hover { transform: scale(1.15); }
+  </style>
+</head>
+<body>
+  <!-- Barre d’accent Gabon -->
+  <div class="accent-bar" aria-hidden="true"></div>
+
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="#">
+        <img src="images/logo.jpg" alt="Logo de la campagne" class="brand-logo" />
+        <div class="brand-text">
+          <span class="brand-title">Marcel Ogouliguende & Brandt Tessi Ndomba</span>
+          <!-- <span class="brand-sub">Candidat — Diaspora</span> -->
+        </div>
+      </a>
+
+      <button
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Ouvrir le menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="site-nav" class="nav">
+        <a href="#accueil" class="nav-link is-active">Accueil</a>
+        <a href="#profession" class="nav-link">Projet</a>
+        <a href="#programme" class="nav-link">Programme</a>
+        <a href="#actus" class="nav-link">Actualités</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="https://liens-diaspora-gabon.com/" class="nav-link">Liens</a>
+        <a
+          href="https://liens-diaspora-gabon.com/"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary"
+        >Faire un don</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="accueil">
+    <!-- HERO CARROUSEL FONDU -->
+    <section class="hero-bleed hero-fader">
+      <!-- Slide 1 : Candidat principal -->
+      <div class="hero-slide is-active">
+        <picture class="hero-media">
+          <img
+            src="images/slide1.JPG"
+            alt="Marcel Ogouliguende"
+            class="hero-img"
+            style="object-position: 40% 20%;"
+          />
+        </picture>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content container">
+          <h1 class="hero-title">« Unis par nos racines - connectés au monde »</h1>
+          <p class="hero-sub">Marcel Ogouliguende, candidat — Diaspora</p>
+          <!--
+          <div class="hero-cta">
+            <a href="https://paypal.me/DiaspoVraiChangement" target="_blank" rel="noopener" class="btn btn-primary">Contribuer</a>
+            <a href="#benevole" class="btn btn-secondary">Bénévole</a>
+          </div>
+          -->
+        </div>
+      </div>
+
+      <!-- Slide 2 : Suppléant -->
+      <div class="hero-slide">
+        <picture class="hero-media">
+          <img
+            src="images/slide3.jpg"
+            alt="Brandt Tessy Ndomba"
+            class="hero-img"
+            style="object-position: 30% 20%;"
+          />
+        </picture>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content container">
+          <h1 class="hero-title">« Ensemble pour une diaspora forte et utile. »</h1>
+          <p class="hero-sub">Brandt Tessy Ndomba — Suppléant</p>
+          <!--
+          <div class="hero-cta">
+            <a href="https://paypal.me/DiaspoVraiChangement" target="_blank" rel="noopener" class="btn btn-primary">Contribuer</a>
+            <a href="#benevole" class="btn btn-secondary">Bénévole</a>
+          </div>
+          -->
+        </div>
+      </div>
+
+      <!-- Pastilles -->
+      <div class="hero-dots" aria-label="Choisir une image">
+        <button class="dot is-active" aria-label="Candidat"></button>
+        <button class="dot" aria-label="Suppléant"></button>
+      </div>
+    </section>
+
+    <!-- Profession de foi -->
+    <section id="profession" class="section container">
+      <div class="card">
+        <h2 class="section-title">Profession de foi</h2>
+
+        <div class="profession-content">
+          <!-- Vidéo -->
+          <video
+            class="profession-img"
+            src="Videos/VIDEO-2025-08-29-14-06-03.mp4"
+            poster="images/IMG_4496.jpg"
+            controls
+            muted
+            loop
+            playsinline
+            preload="metadata"
+          ></video>
+
+          <!-- Texte -->
+          <div class="profession-text">
+            <p>
+              Je m’engage pour une diaspora gabonaise unie, acteur du changement et
+              force de proposition pour l’avenir de notre pays. Notre voix compte,
+              et ensemble nous pouvons construire un Gabon plus juste, plus inclusif
+              et connecté au monde.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programme -->
+    <section id="programme" class="section container">
+      <div class="card">
+        <h2 class="section-title">Programme — 5 engagements concrets</h2>
+
+        <div class="pillars">
+          <!-- 1. Éducation -->
+          <article class="pillar-card">
+            <div class="pillar-media">
+              <img
+                src="images/education.jpg"
+                alt="Éducation, mentorat et innovation"
+                loading="lazy"
+              />
+            </div>
+            <div class="pillar-body">
+              <h3 class="pillar-title">1. Élever nos jeunes par l’éducation</h3>
+              <p class="pillar-text">
+                Offrir excellence, mentorat, innovation et formation spécialisée.
+              </p>
+            </div>
+          </article>
+
+          <!-- 2. Investissement diasporique -->
+          <article class="pillar-card">
+            <div class="pillar-media">
+              <img
+                src="images/investissement.jpg"
+                alt="Investissement de la diaspora dans les PME"
+                loading="lazy"
+              />
+            </div>
+            <div class="pillar-body">
+              <h3 class="pillar-title">2. Libérer l’investissement diasporique</h3>
+              <p class="pillar-text">
+                Mobiliser la diaspora pour investir dans les PME et créer des partenariats stratégiques.
+              </p>
+            </div>
+          </article>
+
+          <!-- 3. Administration -->
+          <article class="pillar-card">
+            <div class="pillar-media">
+              <img
+                src="images/administration.jpg"
+                alt="Administration modernisée et transparente"
+                loading="lazy"
+              />
+            </div>
+            <div class="pillar-body">
+              <h3 class="pillar-title">3. Transformer l’administration</h3>
+              <p class="pillar-text">
+                Mettre en place un dispositif modernisé, accessible et transparent pour la diaspora.
+              </p>
+            </div>
+          </article>
+
+          <!-- 4. Culture & sport -->
+          <article class="pillar-card">
+            <div class="pillar-media">
+              <img
+                src="images/culture gabonaise.jpg"
+                alt="Promotion de la culture et du sport gabonais"
+                loading="lazy"
+              />
+            </div>
+            <div class="pillar-body">
+              <h3 class="pillar-title">4. Faire vivre notre culture et notre sport</h3>
+              <p class="pillar-text">
+                Promouvoir la culture et le sport gabonais à l’échelle de la diaspora.
+              </p>
+            </div>
+          </article>
+
+          <!-- 5. Réseau d’excellence -->
+          <article class="pillar-card">
+            <div class="pillar-media">
+              <img
+                src="images/excellence.jpg"
+                alt="Réseau de l’excellence gabonaise"
+                loading="lazy"
+              />
+            </div>
+            <div class="pillar-body">
+              <h3 class="pillar-title">5. Construire le réseau de l’excellence</h3>
+              <p class="pillar-text">
+                Identifier, connecter et mobiliser les compétences de la diaspora.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Actualités -->
+    <section id="actus" class="section container">
+      <div class="card card--alt">
+        <div class="section-head">
+          <h2 class="section-title">Actualités</h2>
+          <p class="section-kicker">Vidéos, rencontres, interviews & événements</p>
+        </div>
+
+        <!-- 1) Vidéos (TikTok/YouTube) -->
+        <!--
+        <div class="news-grid">
+          <article class="news-card video">
+            <a
+              class="thumb"
+              href="https://vm.tiktok.com/ZM8aXxxxxx"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="images/actus/tiktok-01.jpg"
+                alt="Extrait TikTok — Rencontre diaspora"
+                loading="lazy"
+              />
+              <span class="badge badge--tiktok">TikTok</span>
+              <span class="play"></span>
+            </a>
+            <div class="news-body">
+              <h3 class="news-title">Rencontre avec la diaspora à Paris</h3>
+              <div class="meta">
+                <time datetime="2025-08-24">24 août 2025</time>
+                <span class="dot">•</span>
+                <span>00:43</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-card video">
+            <a
+              class="thumb"
+              href="https://www.youtube.com/watch?v=YYYYYYYY"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="images/actus/youtube-01.jpg"
+                alt="Interview YouTube — Éducation et diaspora"
+                loading="lazy"
+              />
+              <span class="badge badge--yt">YouTube</span>
+              <span class="play"></span>
+            </a>
+            <div class="news-body">
+              <h3 class="news-title">Interview — Éducation & diaspora</h3>
+              <div class="meta">
+                <time datetime="2025-08-18">18 août 2025</time>
+                <span class="dot">•</span>
+                <span>12:10</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-card video">
+            <a
+              class="thumb"
+              href="https://www.tiktok.com/@diasporaduvraichangement/video/7545467385751375126?_r=1&_t=ZN-8zS2JSeji42"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="images/actus/tiktok-02.jpg"
+                alt="Extrait TikTok — Engagement sport & culture"
+                loading="lazy"
+              />
+              <span class="badge badge--tiktok">TikTok</span>
+              <span class="play"></span>
+            </a>
+            <div class="news-body">
+              <h3 class="news-title">Culture & sport : cap sur la jeunesse</h3>
+              <div class="meta">
+                <time datetime="2025-08-10">10 août 2025</time>
+                <span class="dot">•</span>
+                <span>00:29</span>
+              </div>
+            </div>
+          </article>
+        </div>
+        -->
+
+        <!-- 2) Photos (rencontres) -->
+        <h3 class="block-title">Rencontres en images</h3>
+        <div class="masonry">
+          <a class="brick" href="images/actus/meet-01.jpg" target="_blank" rel="noopener">
+            <img src="images/rencontre.jpg" alt="Rencontre 1" loading="lazy" />
+          </a>
+          <a class="brick" href="images/actus/meet-02.jpg" target="_blank" rel="noopener">
+            <img src="images/rencontre3.JPG" alt="Rencontre 2" loading="lazy" />
+          </a>
+          <a class="brick" href="images/actus/meet-03.jpg" target="_blank" rel="noopener">
+            <img src="images/recontre2.JPG" alt="Rencontre 3" loading="lazy" />
+          </a>
+          <a class="brick" href="images/actus/meet-04.jpg" target="_blank" rel="noopener">
+            <img src="images/rencontre4.JPG" alt="Rencontre 4" loading="lazy" />
+          </a>
+          <a class="brick" href="images/actus/meet-05.jpg" target="_blank" rel="noopener">
+            <img src="images/rencontre5.JPG" alt="Rencontre 5" loading="lazy" />
+          </a>
+        </div>
+
+        <!-- 3) Interviews / Événements -->
+        <h3 class="block-title">Interviews & événements</h3>
+        <div class="timeline">
+          <article class="time-card upcoming">
+            <div class="time-point"></div>
+            <div class="time-body">
+              <h4 class="time-title">Interview ACA RADIO </h4>
+              <div class="meta">
+                <time datetime="2025-09-05">5 sept. 2025</time>
+                <span class="dot">•</span>
+                <span>17h00</span>
+                <span>En Direct sur tous nos réseaux</span>
+                <a href=""></a>
+              </div>
+              <div class="chips">
+                <span class="chip">À venir</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="time-card">
+            <div class="time-point"></div>
+            <div class="time-body">
+              <h4 class="time-title">Rencontre citoyenne</h4>
+              <div class="meta">
+                <time datetime="2025-09-06">06 septembre 2025</time>
+                <span class="dot">•</span>
+                <span>4620 North Braeswood Boulevard, Houston, TX 77096</span>
+              </div>
+              <div class="chips"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section container">
+      <div class="card card--alt contact">
+        <div class="contact-head">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-kicker">Écrivez-nous — nous répondons rapidement.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Colonne de gauche : infos -->
+          <aside class="contact-info">
+            <div class="info-block">
+              <h3>Équipe de campagne</h3>
+              <p>Questions médias, bénévolat, propositions, partenariats…</p>
+              <ul class="contact-list">
+                <li>
+                  <span class="ico"></span>
+                  <a href="mailto:diasporaduvraichangement@gmail.com">
+                    diasporaduvraichangement@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <span class="ico"></span>
+                  <a href="https://whatsapp.com/channel/0029VbB2fGx1noz2MxgGUX20" target="_blank" rel="noopener">
+                    Rejoindre notre chaîne WhatsApp
+                  </a>
+                </li>
+                <li><span class="ico"></span> Diaspora du vrai changement</li>
+              </ul>
+            </div>
+
+            <div class="badges">
+              <span class="chip">Réponse sous 24h</span>
+              <span class="chip">Données protégées</span>
+            </div>
+          </aside>
+
+          <!-- Colonne de droite : formulaire -->
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="field">
+              <label for="name">Nom complet</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+              <small class="hint">Votre nom est requis.</small>
+            </div>
+
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+              <small class="hint">Un e-mail valide est requis.</small>
+            </div>
+
+            <div class="field">
+              <label for="phone">Téléphone (facultatif)</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" />
+            </div>
+
+            <div class="field">
+              <label for="subject">Sujet</label>
+              <select id="subject" name="subject" required>
+                <option value="" selected disabled>Choisir un sujet…</option>
+                <option>Information générale</option>
+                <option>Devenir bénévole</option>
+                <option>Presse / Média</option>
+                <option>Faire un don</option>
+                <option>Autre</option>
+              </select>
+              <small class="hint">Sélectionnez un sujet.</small>
+            </div>
+
+            <div class="field">
+              <label for="message">Votre message</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+              <small class="hint">Écrivez au moins quelques mots.</small>
+            </div>
+
+            <label class="agree">
+              <input type="checkbox" id="consent" required />
+              <span>J’accepte que mes informations soient utilisées pour me répondre.</span>
+            </label>
+
+            <button class="btn btn-primary btn-wide" type="submit" aria-label="Envoyer le message">
+              Envoyer
+            </button>
+
+            <p class="form-note">
+              En envoyant, vous acceptez notre usage de vos données pour traiter votre demande.
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Toast de succès -->
+      <div id="contactToast" class="toast" role="status" aria-live="polite" hidden>
+        Merci ! Votre message va être envoyé.
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Équipe de campagne — Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- ===== Script fader ===== -->
+  <script>
+    (function () {
+      const root = document.querySelector(".hero-fader");
+      if (!root) return;
+
+      const slides = Array.from(root.querySelectorAll(".hero-slide"));
+      const dots = Array.from(root.querySelectorAll(".hero-dots .dot"));
+      let i = 0;
+
+      function goTo(n) {
+        slides[i].classList.remove("is-active");
+        dots[i].classList.remove("is-active");
+        i = (n + slides.length) % slides.length;
+        slides[i].classList.add("is-active");
+        dots[i].classList.add("is-active");
+      }
+
+      // autoplay (6s) — pause au survol
+      let timer = setInterval(() => goTo(i + 1), 6000);
+      root.addEventListener("mouseenter", () => clearInterval(timer));
+      root.addEventListener(
+        "mouseleave",
+        () => (timer = setInterval(() => goTo(i + 1), 6000))
+      );
+
+      // clic pastilles
+      dots.forEach((d, idx) => d.addEventListener("click", () => goTo(idx)));
+    })();
+
+    // année auto
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <script>
+    (function(){
+      const form  = document.getElementById('contactForm');
+      const toast = document.getElementById('contactToast');
+
+      function setInvalid(field, invalid){
+        field.classList.toggle('is-invalid', invalid);
+        const control = field.querySelector('input, select, textarea');
+        control.setAttribute('aria-invalid', invalid ? 'true' : 'false');
+      }
+
+      function validate(){
+        let ok = true;
+        form.querySelectorAll('.field').forEach(f => setInvalid(f,false));
+
+        const requiredIds = ['name','email','subject','message'];
+        requiredIds.forEach(id => {
+          const field = form.querySelector(`#${id}`).closest('.field');
+          const el    = field.querySelector('#' + id);
+          const valid = el.value && (id !== 'email' || el.validity.valid);
+          if (!valid){ setInvalid(field, true); ok = false; }
+        });
+
+        const consent = document.getElementById('consent');
+        if (!consent.checked){ ok = false; consent.focus(); }
+        return ok;
+      }
+
+      function showToast(msg){
+        toast.textContent = msg;
+        toast.hidden = false;
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+          setTimeout(() => (toast.hidden = true), 200);
+        }, 2200);
+      }
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!validate()) return;
+
+        // Fallback sans back-end : ouvre l'email prérempli
+        const name    = form.name.value.trim();
+        const email   = form.email.value.trim();
+        const phone   = form.phone.value.trim();
+        const subject = form.subject.value;
+        const message = form.message.value.trim();
+
+        const to          = 'diasporaduvraichangement@gmail.com';
+        const mailSubject = `[Site] ${subject} — ${name}`;
+        const bodyLines   = [
+          `Nom : ${name}`,
+          `E-mail : ${email}`,
+          phone ? `Téléphone : ${phone}` : null,
+          '',
+          message
+        ].filter(Boolean).join('%0D%0A');
+
+        const link = `mailto:${to}?subject=${encodeURIComponent(mailSubject)}&body=${bodyLines}`;
+        showToast('Merci ! Préparation de votre message…');
+        window.location.href = link;
+      });
+    })();
+  </script>
+</body>
+</html>
